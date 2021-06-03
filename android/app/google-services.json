@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "460954975544",
+    "project_id": "doosit-c41fe",
+    "storage_bucket": "doosit-c41fe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:460954975544:android:f3d06c4113229a96c0d5cd",
+        "android_client_info": {
+          "package_name": "com.doosit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "460954975544-p9m2uk9qmhtnu23iibga71s6cftsqvgk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.doosit",
+            "certificate_hash": "f9dbd0fbe64f102fe8a7a3443687a0ed028bd388"
+          }
+        },
+        {
+          "client_id": "460954975544-i2epg7f0ic07se90uh0k4a0t1cq7iofl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUwPma5hnI2q-u4Eqjvr9R3PXSNm888_w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "460954975544-i2epg7f0ic07se90uh0k4a0t1cq7iofl.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "460954975544-ju10qu98adjv241q9k1t777m9bgjam3t.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.doosit"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
