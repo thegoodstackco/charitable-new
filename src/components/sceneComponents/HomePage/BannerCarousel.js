@@ -18,15 +18,19 @@ export class BannerCarousel extends Component {
     this.state = {
       slides: [
         {
+          title: 'Support individual and charity operated missions',
           thumbnail: require('../../../assets/images/carousel_1.jpg'),
         },
         {
+          title: 'Add your charity or donate to a charity of your choice',
           thumbnail: require('../../../assets/images/carousel_2.jpg'),
         },
         {
+          title: 'Round up spare change and change the world',
           thumbnail: require('../../../assets/images/carousel_3.jpg'),
         },
         {
+          title: 'See the impact of your efforts all together',
           thumbnail: require('../../../assets/images/carousel_4.jpg'),
         },
       ],
@@ -35,7 +39,7 @@ export class BannerCarousel extends Component {
   }
 
   _renderItem = ({ item, index }) => {
-    return <BannerSection bannerImage={item.thumbnail} />;
+    return <BannerSection bannerImage={item.thumbnail} title={item.title}/>;
   };
   get pagination() {
     const { activeSlide, slides } = this.state;
@@ -75,7 +79,6 @@ export class BannerCarousel extends Component {
           onSnapToItem={(index) => this.setState({ activeSlide: index })}
           sliderWidth={wp(100)}
           itemWidth={wp(100)}
-          //   itemHeight={wp(100)}
           layout="default"
           firstItem={0}
           loop

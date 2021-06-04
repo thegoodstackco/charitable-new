@@ -53,14 +53,14 @@ const option = [
   // },
   {
     icon: google,
-    value: 'Continue with google',
+    value: 'Continue with Google',
     type: 'google',
     bgColor: colors.white,
     showButton: true,
   },
   {
     icon: apple,
-    value: 'Continue with apple',
+    value: 'Continue with Apple',
     type: 'apple',
     bgColor: colors.GREYS.C6,
     showButton: Platform.OS === 'ios',

@@ -46,7 +46,6 @@ request.interceptors.response.use(
         // console.log('error while setting token in storage', error);
       }
     }
-    console.log(4949491149,response)
     return response;
   },
   (error) =>

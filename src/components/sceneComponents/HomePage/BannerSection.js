@@ -19,7 +19,6 @@ const BannerSection = (props) => {
             width: wp(100),
             position: 'absolute',
             top: 0,
-            backgroundColor: colors.BLUES.C1,
             opacity: 0.75,
           }}
         />
@@ -37,7 +36,7 @@ const BannerSection = (props) => {
               { color: colors.white, textAlign: 'center', lineHeight: 40 },
             ]}
           >
-            Support individual and charity operated missions
+            {`${props.title}`}
           </Text>
         </View>
       </ImageBackground>

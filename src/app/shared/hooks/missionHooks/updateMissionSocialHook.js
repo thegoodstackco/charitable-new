@@ -203,8 +203,6 @@ export const useUpdateMissionSocialHook = (
         payload = {
           insta_token: '',
           insta_link: '',
-          facebook_token: facebookId,
-          facebook_link: facebookLink,
         };
       }else if(requestData && requestData.type === 'Facebook'){
         await setFacebookId('');
@@ -212,8 +210,6 @@ export const useUpdateMissionSocialHook = (
         payload = {
           facebook_token: '',
           facebook_link: '',
-          insta_token: instagramId,
-          insta_link: instagramLink,
         };
       }else {
         payload = {
@@ -234,11 +230,11 @@ export const useUpdateMissionSocialHook = (
         onSocialSuccess({ data: {} });
       } else {
         const params = { missionId };
-        const formData = new FormData();
+        var formData = new FormData();
         Object.entries(payload).map(([key, value]) => {
-          if (value) formData.append(key, value);
-          return null;
+          formData.append(key, value);
         });
+        console.log(245245,formData);
         UPDATE_MISSION_API_CALL({
           request: {
             payload: formData,
@@ -252,18 +248,12 @@ export const useUpdateMissionSocialHook = (
           },
           callback: {
             successCallback: ({ res, data, message, status }) => {
-              // console.log(238,res)
-              // console.log(239,data)
-              // console.log(240,message)
-              console.log(241,status)
+              console.log(241,status);
+              console.log(254254,res);
               onSocialSuccess({ res, data, message, status });
             },
             errorCallback: ({ error, errorData, message, status, errors }) => {
-              console.log(24122,error)
-              console.log(24222,errorData)
-              console.log(24322,message)
-              console.log(24422,status)
-              console.log(24522,errors)
+              console.log(258258,status)
               onSocialError({
                 error,
                 errorData,
@@ -283,7 +273,6 @@ export const useUpdateMissionSocialHook = (
   const updateSocial = useMemo(() => getData(UPDATE_MISSION_API, [], false), [
     UPDATE_MISSION_API,
   ]);
-
   const missionDetail = useMemo(() => {
     const missionInfo = getData(GET_MISSION_BY_ID_API, {}, false);
     if (missionInfo.data && Object.keys(missionInfo.data).length) {

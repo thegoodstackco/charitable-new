@@ -20,7 +20,7 @@ const Settings = (props) => {
       menuItem: 'Notifications',
       onPress: () => props.navigation.navigate('Notifications'),
     },
-    { menuItem: 'About Charitable', onPress: null },
+    { menuItem: 'About Doosit', onPress: null },
     {
       menuItem: 'Logout',
       onPress: onLogout,
