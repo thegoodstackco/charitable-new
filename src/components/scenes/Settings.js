@@ -16,10 +16,10 @@ const Settings = (props) => {
       menuItem: 'Linked Card',
       onPress: () => props.navigation.navigate('LinkedCards'),
     },
-    {
-      menuItem: 'Notifications',
-      onPress: () => props.navigation.navigate('Notifications'),
-    },
+    // {
+    //   menuItem: 'Notifications',
+    //   onPress: () => props.navigation.navigate('Notifications'),
+    // },
     { menuItem: 'About Doosit', onPress: null },
     {
       menuItem: 'Logout',

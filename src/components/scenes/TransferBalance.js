@@ -22,7 +22,6 @@ const TransferBalance = (props) => {
 
   const nameRef = useRef(null);
   const accountRef = useRef(null);
-  // const ifscRef = useRef(null);
   const bankNameRef = useRef(null);
   const commentsRef = useRef(null);
   const routingRef = useRef(null);
@@ -42,11 +41,8 @@ const TransferBalance = (props) => {
     paypal,
     cashapp,
     comments,
-  } = useBankAccountHook(props, {
-    onUpdateBankAccountSuccess,
-    onUpdateBankAccountError,
-  });
-
+  } = useBankAccountHook(props, { onUpdateBankAccountSuccess,onUpdateBankAccountError,});
+  
   const {
     payoutToBank: { loader: payoutToBankLoader, onPayout },
     accountBalance,
@@ -78,6 +74,7 @@ const TransferBalance = (props) => {
   }
 
   function onUpdateBankAccountError({ message }) {
+      console.log(77177);
     if (message) {
       errorToast(message.toString(message));
     } else {
@@ -133,7 +130,6 @@ const TransferBalance = (props) => {
                   onChangeText={name.onChange}
                   onBlur={name.onBlur}
                   value={name.value}
-                  errorText={name.error}
                   returnKeyType="next"
                   onSubmitEditing={() => {
                     accountRef.current.focus();
@@ -147,7 +143,6 @@ const TransferBalance = (props) => {
                   onChangeText={accountNo.onChange}
                   onBlur={accountNo.onBlur}
                   value={accountNo.value}
-                  errorText={accountNo.error}
                   returnKeyType="next"
                   onSubmitEditing={() => {
                     bankNameRef.current.focus();
@@ -161,7 +156,6 @@ const TransferBalance = (props) => {
                   onChangeText={ifscCode.onChange}
                   onBlur={ifscCode.onBlur}
                   value={ifscCode.value}
-                  errorText={ifscCode.error}
                   returnKeyType="next"
                   onSubmitEditing={() => {
                     bankNameRef.current.focus();
@@ -175,7 +169,6 @@ const TransferBalance = (props) => {
                   onChangeText={bankName.onChange}
                   onBlur={bankName.onBlur}
                   value={bankName.value}
-                  errorText={bankName.error}
                   returnKeyType="next"
                   onSubmitEditing={() => {
                     routingRef.current.focus();
@@ -189,7 +182,6 @@ const TransferBalance = (props) => {
                   onChangeText={routing.onChange}
                   onBlur={routing.onBlur}
                   value={routing.value}
-                  errorText={routing.error}
                   returnKeyType="next"
                   onSubmitEditing={() => {
                     venmoRef.current.focus();
@@ -203,7 +195,6 @@ const TransferBalance = (props) => {
                   onChangeText={venmo.onChange}
                   onBlur={venmo.onBlur}
                   value={venmo.value}
-                  errorText={venmo.error}
                   returnKeyType="next"
                   onSubmitEditing={() => {
                     cashappRef.current.focus();
@@ -217,7 +208,6 @@ const TransferBalance = (props) => {
                   onChangeText={cashapp.onChange}
                   onBlur={cashapp.onBlur}
                   value={cashapp.value}
-                  errorText={cashapp.error}
                   returnKeyType="next"
                   onSubmitEditing={() => {
                     paypalRef.current.focus();
@@ -231,7 +221,6 @@ const TransferBalance = (props) => {
                   onChangeText={paypal.onChange}
                   onBlur={paypal.onBlur}
                   value={paypal.value}
-                  errorText={paypal.error}
                   returnKeyType="next"
                   onSubmitEditing={() => {
                     commentsRef.current.focus();

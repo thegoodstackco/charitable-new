@@ -24,7 +24,7 @@ import {
 import {
   GoogleSignin,
   statusCodes,
-} from '@react-native-community/google-signin';
+} from '@react-native-google-signin/google-signin';
 import appleAuth, {
   AppleAuthRequestScope,
   AppleAuthRequestOperation,
@@ -299,6 +299,7 @@ const Login = (props) => {
       await GoogleSignin.hasPlayServices();
 
       await GoogleSignin.signIn().then((data) => {
+        console.log(302302,data);
         // create a new firebase credential with the token
         const credential = firebase.auth.GoogleAuthProvider.credential(
           data.idToken,

@@ -13,6 +13,7 @@
         android:allowBackup="false"
         android:theme="@style/AppTheme"
         android:screenOrientation="portrait"
+        android:largeHeap="true"
         android:networkSecurityConfig="@xml/network_security_config">
         <!-- Maps -->
         <meta-data

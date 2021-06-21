@@ -148,38 +148,19 @@ export const useBankAccountHook = (
   // );
 
   const handleAddUpdateBankAccount = ({ isTransfer = true }) => {
-    const formError = [];
-    const isNameError = validate(name, 'name');
-    const isAccountNoError = validate(accountNo, 'accountNo');
-    const isBankNameError = validate(bankName, 'bankName');
-    if (isNameError) {
-      formError.push(null);
-      setNameError(isNameError);
-    }
-    if (isAccountNoError) {
-      formError.push(null);
-      setAccountNoError(isAccountNoError);
-    }
-    // if (isIfscError) {
-    //   formError.push(null);
-    //   setIfscCodeError(isIfscError);
-    // }
-    if (isBankNameError) {
-      formError.push(null);
-      setBankNameError(isBankNameError);
-    }
-    if (!formError.length) {
-      const payload = {
-        user: userProfile && userProfile.id,
-        holder_name: name,
-        account_number: accountNo,
-        bank_name: bankName,
-        address: comments,
-        routing,
-        venmo,
-        paypal,
-        cashapp,
-      };
+    const payload = {
+      user: userProfile && userProfile.id,
+      holder_name: name,
+      account_number: accountNo,
+      bank_name: bankName,
+      address: comments,
+      routing,
+      venmo,
+      paypal,
+      cashapp,
+    };
+    if (name.trim().length !== 0 || bankName.trim().length !== 0 || 
+    accountNo.trim().length !== 0 || comments.trim().length !== 0 || routing.trim().length !== 0  || venmo.trim().length !== 0  || paypal.trim().length !== 0 || cashapp.trim().length !== 0) {
       ADD_EDIT_BANK_ACCOUNT_API_CALL({
         request: {
           payload,
@@ -213,6 +194,10 @@ export const useBankAccountHook = (
             });
           },
         },
+      });
+    }else{
+      onUpdateBankAccountError({
+        message: 'Please fill atlease one field value.'
       });
     }
   };

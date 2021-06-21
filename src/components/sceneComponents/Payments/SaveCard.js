@@ -41,7 +41,7 @@ const PAYMENT_HTML = `
   </div>
   <section class="container-lg">
   <div class="cell example example2" id="example-2">
-      <p class='custom-title'>Charitable</p>
+      <p class='custom-title'>Doosit</p>
       <p class='custom-sub-title'>Link Your Card</p>
       <form>
         <div data-locale-reversible>

@@ -28,7 +28,24 @@ export const useMissionListHook = (
   }, []);
 
   useEffect(() => {
-    if (isRefresh) GET_ALL_MISSIONS_API_CALL();
+    if (isRefresh){
+        setNearestLocation(null);
+        // setCategory('');
+        const query = {
+          zip_code: pinCode,
+        };
+        if (category && category.id) {
+          query.categories__id = category.id;
+        }
+        if (searchKey && searchKey.length) {
+          query.search = searchKey;
+        }
+        GET_ALL_MISSIONS_API_CALL({
+          request: {
+            query,
+          },
+        });
+    }
   }, [isRefresh]);
 
   useEffect(

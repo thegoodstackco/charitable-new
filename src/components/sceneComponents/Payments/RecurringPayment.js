@@ -42,7 +42,7 @@ const PAYMENT_HTML = `
   </div>
   <section class="container-lg">
   <div class="cell example example2" id="example-2">
-      <p class='custom-title'>Charitable</p>
+      <p class='custom-title'>Doosit</p>
       <p class='custom-sub-title'>Link Your Card</p>
       <form>
         <div data-locale-reversible>
@@ -336,12 +336,10 @@ docReady(function(event) {
             example.classList.remove('submitting');
             customError.classList.add('visible');
             customErrorMessage.innerText = result.error.message;
-            // alert(JSON.stringify(result.error));
     
             // Show error to your customer (e.g., insufficient funds)
             console.log(result.error.message);
           } else {
-            // alert(JSON.stringify(result && result.paymentMethod && result.paymentMethod.id));
             if (result && result.paymentMethod && result.paymentMethod.id) {
                 axios.post('subscriptionEndPoint', {
                     payment_method: result.paymentMethod.id,
@@ -403,7 +401,6 @@ docReady(function(event) {
 
 })
 } catch(err) {
-  alert(err);
 }
 `;
 
@@ -421,7 +418,6 @@ const RecurringPayment = (props) => {
           'CUSTOM_AMOUNT',
           recurringPayload.unit_amount,
         ).replace('PAYMENT_CSS', paymentCSS);
-
         const injectedPayment = injectedJavaScript
           .replace('redirectUrl', redirectUrl)
           .replace('subscriptionEndPoint', subscriptionEndPoint)

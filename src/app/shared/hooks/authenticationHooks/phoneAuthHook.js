@@ -143,7 +143,6 @@ export const usePhoneAuthHook = (
 
   const signInWithPhone = async (verificationId, code) => {
     const credential = auth.PhoneAuthProvider.credential(verificationId, code);
-    console.log(146146, credential);
     auth()
       .signInWithCredential(credential)
       .then((firebaseUserCredential) => {

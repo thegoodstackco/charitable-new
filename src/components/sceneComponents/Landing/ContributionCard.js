@@ -55,10 +55,6 @@ const ContributionCard = ({
               height: '100%',
               width: '100%',
               resizeMode: 'contain',
-              // borderTopLeftRadius: 22,
-              // borderTopRightRadius: 22,
-              // borderBottomLeftRadius: 0,
-              // borderBottomRightRadius: 0,
             }}
           />
         </ImageBanner>
@@ -175,9 +171,8 @@ const ContributionCard = ({
                   ]}
                 >
                   {/* Round-Ups,{contribution.roundupAmount} */}
-                  {contribution.payment_type.join(', ')}
+                  {contribution.payment_type.join(', ').replace('roundoff','Round Ups')}
                 </Text>
-                {/* {GetIcon('chevron-right|FontAwesome5', colors.GREYS.C8, wp(3.73))} */}
               </View>
             ) : null}
             <View

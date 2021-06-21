@@ -87,6 +87,8 @@ const ContributionHistory = (props) => {
     wait(1000).then(() => setRefreshing(false));
   }, []);
 
+  console.log(9090,Object.entries(contributions)[0]);
+
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: colors.white }}>
       <ScrollView
@@ -163,7 +165,7 @@ const ContributionHistory = (props) => {
                               { color: colors.GREYS.C8 },
                             ]}
                           >
-                            {`$${history.amount}`}
+                            {`$${history?.amount ? Number(history.amount).toFixed(2) : '00.00'}`}
                           </Text>
                         </View>
                         <View

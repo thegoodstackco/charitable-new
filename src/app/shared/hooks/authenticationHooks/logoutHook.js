@@ -3,7 +3,7 @@
 import { Platform } from 'react-native';
 import auth from '@react-native-firebase/auth';
 import AsyncStorage from '@react-native-community/async-storage';
-import { GoogleSignin } from '@react-native-community/google-signin';
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import { useNavigation } from '@react-navigation/native';
 import {
   LoginManager,

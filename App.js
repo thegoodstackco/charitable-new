@@ -97,11 +97,7 @@
    };
  
    const saveTokenToDatabase = (token) => {
-     // Assume user is already signed in
-     // const userId = auth().currentUser.uid;
- 
      if (token) {
-       console.log(token, 'token');
        setDeviceToken(token);
      }
    };
@@ -128,15 +124,17 @@
  
    useEffect(() => {
      // Get the device token
-     messaging()
-       .getToken()
-       .then((token) => {
-         saveTokenToDatabase(token);
-       });
+     messaging().getToken().then((token) => {
+      if (token) {
+        saveTokenToDatabase(token);
+      }
+     });
  
      // Listen to whether the token changes
-     return messaging().onTokenRefresh((token) => {
-       saveTokenToDatabase(token);
+     messaging().onTokenRefresh((token) => {
+      if (token) {
+        saveTokenToDatabase(token);
+      }
      });
    }, []);
  

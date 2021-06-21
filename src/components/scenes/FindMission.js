@@ -339,7 +339,7 @@ const FindMission = (props) => {
                             { textTransform: 'capitalize' },
                           ]}
                         >
-                          {filterMethod}
+                          {`${filterMethod}`}
                         </Text>
                         <TouchableOpacity
                           onPress={() => setLocationModal(true)}

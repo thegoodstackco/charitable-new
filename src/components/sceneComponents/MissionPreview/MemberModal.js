@@ -119,7 +119,7 @@ const MemberModal = ({ contributions, closeCallback }) => (
                 {getDate(contribution.created_at)}
               </Text>
               <Text style={[typography.regular.h8, { alignSelf: 'flex-end' }]}>
-                {`$${contribution.amount}`}
+                {`$${contribution?.amount ? Number(contribution.amount).toFixed(2) : '00.00'}`}
               </Text>
             </View>
           </View>

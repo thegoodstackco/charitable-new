@@ -25,7 +25,9 @@ export const useDeviceTokenHook = ({
             payload,
           },
           callback: {
-            successCallback: () => {},
+            successCallback: () => {
+              console.log(292929);
+            },
             errorCallback: () => {},
           },
         });
